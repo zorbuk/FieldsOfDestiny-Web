@@ -260,3 +260,12 @@ code { font-size: 0.9em; color: #f0e0b0; background: rgba(255, 255, 255, 0.06); 
   .nav .btn { padding: 8px 12px; }
   .specs .role span, .specs .role { font-size: 0.75rem; }
 }
+
+/* Seven classes: the last row of three centred under the four (and a sensible flow on narrower screens). */
+.classes-grid { grid-template-columns: repeat(12, 1fr); }
+.classes-grid > .class-card { grid-column: span 3; }
+.classes-grid > .class-card:nth-child(5) { grid-column: 2 / span 3; }
+.classes-grid > .class-card:nth-child(6) { grid-column: 5 / span 3; }
+.classes-grid > .class-card:nth-child(7) { grid-column: 8 / span 3; }
+@media (max-width: 980px) { .classes-grid { grid-template-columns: repeat(2, 1fr); } .classes-grid > .class-card, .classes-grid > .class-card:nth-child(n) { grid-column: auto; } }
+@media (max-width: 620px) { .classes-grid { grid-template-columns: 1fr; } }
