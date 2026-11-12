@@ -9,6 +9,13 @@
   // The year in the footer.
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = String(new Date().getFullYear()); });
 
+  // The download for the visitor's system first (Linux: its button the highlighted one).
+  if (/Linux/i.test(navigator.userAgent) && !/Android/i.test(navigator.userAgent)) {
+    document.querySelectorAll('[data-os]').forEach(function (a) {
+      a.classList.toggle("btn-primary", a.getAttribute("data-os") === "linux");
+    });
+  }
+
   // Links from data/web.json (the defaults in the HTML work without it).
   // config.json on the published site (Cloudflare Pages, written by publicar-web); /api/web from the local server.
   function load(url) { return fetch(url, { credentials: "omit" }).then(function (r) { return r.ok ? r.json() : null; }); }
