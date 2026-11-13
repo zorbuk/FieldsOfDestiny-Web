@@ -269,3 +269,4 @@ code { font-size: 0.9em; color: #f0e0b0; background: rgba(255, 255, 255, 0.06); 
 .classes-grid > .class-card:nth-child(7) { grid-column: 8 / span 3; }
 @media (max-width: 980px) { .classes-grid { grid-template-columns: repeat(2, 1fr); } .classes-grid > .class-card, .classes-grid > .class-card:nth-child(n) { grid-column: auto; } }
 @media (max-width: 620px) { .classes-grid { grid-template-columns: 1fr; } }
+.new-tag { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; font-size: .62em; vertical-align: middle; background: var(--accent, #e0b04a); color: #1a1408; font-weight: 700; letter-spacing: .02em; }

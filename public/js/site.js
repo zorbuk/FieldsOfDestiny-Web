@@ -10,9 +10,10 @@
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = String(new Date().getFullYear()); });
 
   // The download for the visitor's system first (Linux: its button the highlighted one).
-  if (/Linux/i.test(navigator.userAgent) && !/Android/i.test(navigator.userAgent)) {
+  var os = /Android/i.test(navigator.userAgent) ? "android" : /Linux/i.test(navigator.userAgent) ? "linux" : null;
+  if (os) {
     document.querySelectorAll('[data-os]').forEach(function (a) {
-      a.classList.toggle("btn-primary", a.getAttribute("data-os") === "linux");
+      a.classList.toggle("btn-primary", a.getAttribute("data-os") === os);
     });
   }
 
